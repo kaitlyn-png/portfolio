@@ -1,0 +1,14 @@
+#navigation{
+    padding: 10px;
+    font-size: 36px;
+    text-align : right;
+}
+#navigation a{
+    text-decoration: none;
+    color: black;
+    padding: 0 30px;
+}
+#navigation a:hover{
+    color: white;
+    cursor: pointer;
+}
