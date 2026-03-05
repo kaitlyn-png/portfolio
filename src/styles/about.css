@@ -1,0 +1,242 @@
+body {
+	color: black;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.about-layout {
+	display: block;
+	max-width: 1120px;
+	margin: 0 auto;
+	padding: 10px 18px 24px;
+}
+
+#content {
+	width: 100%;
+}
+
+.page-label {
+	text-align: center;
+	font-size: 20px;
+	margin: 16px 0 4px;
+	letter-spacing: 0.02em;
+}
+
+h1 {
+	text-align: center;
+	margin: 0 0 18px;
+	font-size: 40px;
+}
+
+#education,
+#about-me,
+#skills-container {
+	width: min(900px, 100%);
+	margin: 0 auto 16px;
+	padding: 16px 18px;
+	background: rgba(255, 255, 255, 0.45);
+	border-radius: 12px;
+	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.detail-columns {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 16px;
+	width: min(900px, 100%);
+	margin: 0 auto 16px;
+}
+
+#experience,
+#coursework {
+	margin: 0;
+	padding: 16px 18px;
+	background: rgba(255, 255, 255, 0.45);
+	border-radius: 12px;
+	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+	margin: 0 0 8px;
+	font-size: 24px;
+	padding-bottom: 6px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+#about-me p {
+	margin: 0;
+	line-height: 1.55;
+	font-size: 17px;
+}
+
+ul {
+	margin: 0;
+	padding-left: 22px;
+}
+
+li {
+	margin: 6px 0;
+	font-size: 16px;
+}
+
+:is(.experience-item, .course-year) {
+	background: rgba(255, 255, 255, 0.55);
+	border-radius: 10px;
+	padding: 10px 12px;
+	margin-bottom: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+:is(.experience-item, .course-year) summary {
+	font-size: 17px;
+	font-weight: 700;
+	cursor: pointer;
+	list-style: none;
+	line-height: 1.35;
+}
+
+:is(.experience-item, .course-year) summary::-webkit-details-marker {
+	display: none;
+}
+
+:is(.experience-item, .course-year) summary::before {
+	content: "▸";
+	margin-right: 10px;
+	display: inline-block;
+	transition: transform 0.15s ease;
+}
+
+:is(.experience-item, .course-year)[open] summary::before {
+	transform: rotate(90deg);
+}
+
+.experience-meta {
+	margin: 6px 0 8px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.experience-skills {
+	margin: 6px 0 0;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.experience-item p {
+	font-size: 16px;
+	line-height: 1.45;
+}
+
+.experience-item ul {
+	margin-bottom: 6px;
+}
+
+#coursework h4 {
+	margin: 8px 0 2px;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+#coursework ul {
+	margin-bottom: 12px;
+}
+
+.course-year ul {
+	margin-top: 0;
+}
+
+@media (max-width: 768px) {
+	h1 {
+		font-size: 32px;
+	}
+
+	.about-layout {
+		padding: 6px 0 16px;
+	}
+
+	.detail-columns {
+		grid-template-columns: 1fr;
+		gap: 14px;
+		max-width: 100%;
+		margin: 0 10px 14px;
+	}
+
+	#experience,
+	#coursework {
+		padding: 14px 14px;
+	}
+
+	#education,
+	#about-me,
+	#skills-container {
+		margin: 0 10px 14px;
+		padding: 16px;
+	}
+}
+
+@media (max-width: 980px) {
+	.detail-columns {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 430px) {
+	.about-layout {
+		padding: 4px 0 12px;
+	}
+
+	.page-label {
+		font-size: 16px;
+		margin: 10px 0 2px;
+	}
+
+	h1 {
+		font-size: 26px;
+		margin-bottom: 12px;
+	}
+
+	#education,
+	#about-me,
+	#skills-container,
+	#experience,
+	#coursework {
+		margin: 0 8px 10px;
+		padding: 12px;
+		border-radius: 10px;
+	}
+
+	h2 {
+		font-size: 20px;
+		padding-bottom: 4px;
+	}
+
+	#about-me p,
+	.experience-item p,
+	li {
+		font-size: 14px;
+		line-height: 1.4;
+	}
+
+	.detail-columns {
+		margin: 0 8px 10px;
+		gap: 10px;
+	}
+
+	:is(.experience-item, .course-year) {
+		padding: 8px 10px;
+		margin-bottom: 8px;
+	}
+
+	:is(.experience-item, .course-year) summary {
+		font-size: 15px;
+	}
+
+	.experience-meta,
+	.experience-skills,
+	#coursework h4 {
+		font-size: 13px;
+	}
+}
+
