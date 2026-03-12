@@ -11,8 +11,30 @@
     margin: 12px;
 }
 
-.header-text{
+#header-text1, #name, #header-text2, #info-container{
     font-size: 48px;
+    opacity: 0;
+    animation: fadeIn 0.9s ease-in-out forwards;
+}
+
+#header-text1{
+    animation-delay: 0s;
+}
+
+#name{
+    animation-delay: 0.9s;
+}
+
+#header-text2{
+    animation-delay: 1.8s;
+}
+
+#info-container{
+    animation-delay: 2.7s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 #info-container{
@@ -56,4 +78,58 @@
 .technologies-logo{
     width: 80px;
     height: 80px;
+}
+
+#figma-logo:hover, #github-logo:hover, #html-logo:hover, #javascript-logo:hover, #python-logo:hover, #react-logo:hover, #typescript-logo:hover{
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 430px) {
+    body{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #header-container{
+        margin: 0;
+    }
+    #header-text1, #header-text2{
+        font-size: 18px;
+    }
+    #name{
+        width: 320px;
+        height: auto;
+    }
+    #about-container{
+        flex-direction: column;
+    }
+
+    #about-container img{
+        width: 360px;
+        height: 360px;
+        border-radius: 50%;
+    }
+    #info-container{
+        background-color: transparent;
+        width: 430px;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .about-text{
+        visibility: hidden;
+        display: none;
+    }
+
+    #technologies-container{
+        width: 430px;
+        gap: 0px;
+    }
+    .technologies-logo{
+        width: 40px;
+        height: 40px;
+        padding: 0 8px;
+    }
 }

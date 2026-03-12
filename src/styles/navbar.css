@@ -13,4 +13,19 @@
 #navigation a:hover{
     color: white;
     cursor: pointer;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 430px) {
+    #navigation{
+        width: 100%;
+        background-color: rgba(252, 252, 252, 0.6);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 12px;
+        margin-bottom: 24px;
+    }
 }
