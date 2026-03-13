@@ -1,19 +1,44 @@
+@keyframes fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(24px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
 #resume-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: fade-in 0.45s ease-out both;
 }
 
 #resume-header{
     font-size: 48px;
     margin: 24px;
+    opacity: 0;
+    animation: fade-up 0.7s ease-out 0.1s both;
 }
 
 #resume-content{
     min-height: 100vh;
     width: 50%;
     margin-bottom: 48px;
+    opacity: 0;
+    animation: fade-up 0.8s ease-out 0.2s both;
 }
 
 #resume-content object{
@@ -25,4 +50,14 @@
     #resume-content{
         width: 100%;
     }
-}   
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #resume-container,
+    #resume-header,
+    #resume-content {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}

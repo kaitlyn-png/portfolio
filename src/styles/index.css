@@ -1,8 +1,29 @@
+@keyframes fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(24px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
 #content{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: fade-in 0.45s ease-out both;
 }
 
 #header-container{
@@ -14,27 +35,22 @@
 #header-text1, #name, #header-text2, #info-container{
     font-size: 48px;
     opacity: 0;
-    animation: fadeIn 0.9s ease-in-out forwards;
 }
 
 #header-text1{
-    animation-delay: 0s;
+    animation: fade-up 0.5s ease-out 0.1s forwards;
 }
 
 #name{
-    animation-delay: 0.9s;
+    animation: fade-up 0.6s ease-out 0.2s forwards;
 }
 
 #header-text2{
-    animation-delay: 1.8s;
+    animation: fade-up 0.7s ease-out 0.3s forwards;
 }
 
 #info-container{
-    animation-delay: 2.7s;
-}
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    animation: fade-up 0.8s cubic-bezier(0.2, 0.65, 0.2, 1) forwards;
 }
 
 #info-container{
@@ -78,7 +94,17 @@
 .technologies-logo{
     width: 80px;
     height: 80px;
+    opacity: 0;
+    animation: fade-up 0.45s ease-out forwards;
 }
+
+.technologies-logo:nth-of-type(1) { animation-delay: 0.55s; }
+.technologies-logo:nth-of-type(2) { animation-delay: 0.62s; }
+.technologies-logo:nth-of-type(3) { animation-delay: 0.69s; }
+.technologies-logo:nth-of-type(4) { animation-delay: 0.76s; }
+.technologies-logo:nth-of-type(5) { animation-delay: 0.83s; }
+.technologies-logo:nth-of-type(6) { animation-delay: 0.9s; }
+.technologies-logo:nth-of-type(7) { animation-delay: 0.97s; }
 
 #figma-logo:hover, #github-logo:hover, #html-logo:hover, #javascript-logo:hover, #python-logo:hover, #react-logo:hover, #typescript-logo:hover{
     transform: scale(1.2);
@@ -131,5 +157,18 @@
         width: 40px;
         height: 40px;
         padding: 0 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #content,
+    #header-text1,
+    #name,
+    #header-text2,
+    #info-container,
+    .technologies-logo {
+        animation: none;
+        opacity: 1;
+        transform: none;
     }
 }

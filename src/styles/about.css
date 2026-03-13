@@ -2,6 +2,26 @@ body {
 	color: black;
 }
 
+@keyframes fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(24px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -11,6 +31,7 @@ body {
 	max-width: 1120px;
 	margin: 0 auto;
 	padding: 10px 18px 24px;
+	animation: fade-in 0.45s ease-out both;
 }
 
 #content {
@@ -22,12 +43,16 @@ body {
 	font-size: 20px;
 	margin: 16px 0 4px;
 	letter-spacing: 0.02em;
+	opacity: 0;
+	animation: fade-up 0.55s ease-out 0.08s forwards;
 }
 
 h1 {
 	text-align: center;
 	margin: 0 0 18px;
 	font-size: 40px;
+	opacity: 0;
+	animation: fade-up 0.6s ease-out 0.16s forwards;
 }
 
 #education,
@@ -39,6 +64,20 @@ h1 {
 	background: rgba(255, 255, 255, 0.45);
 	border-radius: 12px;
 	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+	opacity: 0;
+	animation: fade-up 0.65s cubic-bezier(0.2, 0.65, 0.2, 1) forwards;
+}
+
+#education {
+	animation-delay: 0.24s;
+}
+
+#about-me {
+	animation-delay: 0.32s;
+}
+
+#skills-container {
+	animation-delay: 0.4s;
 }
 
 .detail-columns {
@@ -47,6 +86,8 @@ h1 {
 	gap: 16px;
 	width: min(900px, 100%);
 	margin: 0 auto 16px;
+	opacity: 0;
+	animation: fade-up 0.7s ease-out 0.5s forwards;
 }
 
 #experience,
@@ -87,6 +128,56 @@ li {
 	padding: 10px 12px;
 	margin-bottom: 10px;
 	border: 1px solid rgba(0, 0, 0, 0.08);
+	opacity: 0;
+	animation: fade-up 0.5s ease-out forwards;
+}
+
+#experience .experience-item:nth-of-type(1),
+#coursework .course-year:nth-of-type(1) {
+	animation-delay: 0.62s;
+}
+
+#experience .experience-item:nth-of-type(2),
+#coursework .course-year:nth-of-type(2) {
+	animation-delay: 0.68s;
+}
+
+#experience .experience-item:nth-of-type(3),
+#coursework .course-year:nth-of-type(3) {
+	animation-delay: 0.74s;
+}
+
+#experience .experience-item:nth-of-type(4),
+#coursework .course-year:nth-of-type(4) {
+	animation-delay: 0.8s;
+}
+
+#experience .experience-item:nth-of-type(5),
+#coursework .course-year:nth-of-type(5) {
+	animation-delay: 0.86s;
+}
+
+#experience .experience-item:nth-of-type(6) {
+	animation-delay: 0.92s;
+}
+
+#experience .experience-item:nth-of-type(7) {
+	animation-delay: 0.98s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.about-layout,
+	.page-label,
+	h1,
+	#education,
+	#about-me,
+	#skills-container,
+	.detail-columns,
+	:is(.experience-item, .course-year) {
+		animation: none;
+		opacity: 1;
+		transform: none;
+	}
 }
 
 :is(.experience-item, .course-year) summary {
