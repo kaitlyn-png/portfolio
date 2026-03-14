@@ -138,6 +138,12 @@
     padding: 2px 8px;
 }
 
+#projects-footer {
+    margin: 32px 0;
+    font-size: 32px;
+    color: #b85fc6;
+}
+
 @media (max-width: 700px) {
     .project-card {
         flex-direction: column;
