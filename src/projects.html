@@ -27,7 +27,7 @@
             </div>
             <div class="projects-list">
                 
-                <div class="project-card">
+                <div class="project-card" onclick="window.open('https://kaitlyn-png.github.io/Outdoor-World/src/World.html', '_blank')">
                     <div class="project-video">
                         <iframe width="320" height="180" src="https://www.youtube.com/embed/BFgo2NVhof4" title="Outdoor World Gameplay Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" onclick="window.open('https://kaitlyn-png.github.io/Minecraft-Simulator/src/World.html', '_blank')">
                     <div class="project-video">
                         <iframe width="320" height="180" src="https://www.youtube.com/embed/uo58U9oGx1Q" title="Minecraft Simulator Gameplay Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
@@ -69,7 +69,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" onclick="window.open('https://kaitlyn-png.github.io/sticker-sketchpad/', '_blank')">
                     <div class="project-video">
                         <iframe width="320" height="180" src="https://www.youtube.com/embed/PfwkFOzeK2g" title="Sticker Sketchpad Gameplay Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
@@ -91,7 +91,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" onclick="window.open('https://kaitlyn-png.github.io/axolotl-clicker/', '_blank')">
                     <div class="project-video">
                         <iframe width="320" height="180" src="https://www.youtube.com/embed/4mGlgFTwsAA" title="Axolotl Clicker Gameplay Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
@@ -113,7 +113,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" onclick="window.open('https://kaitlyn-png.github.io/Catastrophe/', '_blank')">
                     <div class="project-video">
                         <iframe width="320" height="180" src="https://www.youtube.com/embed/vPcf3BAGSNk" title="Catastrophe Gameplay Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
@@ -142,6 +142,11 @@
                 kaitlyn eng &copy; 2026
             </div>
         </div>
+        <script>
+            document.querySelectorAll('.project-links a').forEach(link => {
+                link.addEventListener('click', event => event.stopPropagation());
+            });
+        </script>
     </body>
     </html>
 </html>
