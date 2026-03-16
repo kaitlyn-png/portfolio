@@ -38,23 +38,6 @@ body {
 	width: 100%;
 }
 
-.page-label {
-	text-align: center;
-	font-size: 20px;
-	margin: 16px 0 4px;
-	letter-spacing: 0.02em;
-	opacity: 0;
-	animation: fade-up 0.55s ease-out 0.08s forwards;
-}
-
-h1 {
-	text-align: center;
-	margin: 0 0 18px;
-	font-size: 40px;
-	opacity: 0;
-	animation: fade-up 0.6s ease-out 0.16s forwards;
-}
-
 #education,
 #about-me,
 #skills-container {
@@ -167,8 +150,8 @@ li {
 
 @media (prefers-reduced-motion: reduce) {
 	.about-layout,
-	.page-label,
-	h1,
+	#header-label,
+	#header-text,
 	#education,
 	#about-me,
 	#skills-container,
@@ -239,7 +222,7 @@ li {
 }
 
 @media (max-width: 768px) {
-	h1 {
+	#header-text {
 		font-size: 32px;
 	}
 
@@ -278,12 +261,12 @@ li {
 		padding: 4px 0 12px;
 	}
 
-	.page-label {
+	#header-label {
 		font-size: 16px;
 		margin: 10px 0 2px;
 	}
 
-	h1 {
+	#header-text {
 		font-size: 26px;
 		margin-bottom: 12px;
 	}

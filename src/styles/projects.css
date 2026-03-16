@@ -27,24 +27,8 @@
     animation: fade-in 0.45s ease-out both;
 }
 
-#header-container{
-    font-size: 24px;
-    text-align: center;
-    margin: 48px;
-}
-
-.header-text{
-    font-size: 48px;
-    opacity: 0;
-    animation: fade-up 0.55s ease-out forwards;
-}
-
-.header-text:nth-of-type(1) {
-    animation-delay: 0.12s;
-}
-
-.header-text:nth-of-type(2) {
-    animation-delay: 0.22s;
+#header-container {
+    margin: 0 0 36px;
 }
 
 .projects-list {
@@ -147,9 +131,13 @@
 }
 
 #projects-footer {
-    margin: 32px 0;
     font-size: 32px;
     color: #b85fc6;
+    text-align: center;
+    margin: 10px 0 10px 0;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 @media (max-width: 700px) {
