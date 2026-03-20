@@ -1,5 +1,5 @@
 body {
-	color: black;
+	color: #2f2942;
 }
 
 @keyframes fade-up {
@@ -27,72 +27,92 @@ body {
 }
 
 .about-layout {
-	display: block;
-	max-width: 1120px;
+	position: relative;
+	max-width: 1140px;
 	margin: 0 auto;
-	padding: 10px 18px 24px;
+	padding: 10px 18px 110px;
 	animation: fade-in 0.45s ease-out both;
+	overflow: hidden;
+}
+
+.about-layout::before,
+.about-layout::after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	border-radius: 999px;
+	filter: blur(1px);
+}
+
+.about-layout::before {
+	width: 280px;
+	height: 280px;
+	top: 120px;
+	left: -110px;
+}
+
+.about-layout::after {
+	width: 300px;
+	height: 300px;
+	right: -120px;
+	bottom: 120px;
 }
 
 #content {
 	width: 100%;
-}
-
-#education,
-#about-me,
-#skills-container {
-	width: min(900px, 100%);
-	margin: 0 auto 16px;
-	padding: 16px 18px;
-	background: rgba(255, 255, 255, 0.45);
-	border-radius: 12px;
-	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-	opacity: 0;
-	animation: fade-up 0.65s cubic-bezier(0.2, 0.65, 0.2, 1) forwards;
-}
-
-#education {
-	animation-delay: 0.24s;
-}
-
-#about-me {
-	animation-delay: 0.32s;
-}
-
-#skills-container {
-	animation-delay: 0.4s;
-}
-
-.detail-columns {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	display: flex;
+	flex-direction: column;
 	gap: 16px;
-	width: min(900px, 100%);
-	margin: 0 auto 16px;
-	opacity: 0;
-	animation: fade-up 0.7s ease-out 0.5s forwards;
 }
 
+.about-top-grid {
+	display: grid;
+	grid-template-columns: 1.4fr 1fr;
+	gap: 16px;
+	opacity: 0;
+	animation: fade-up 0.65s cubic-bezier(0.2, 0.65, 0.2, 1) 0.2s forwards;
+}
+
+.quick-panels {
+	display: grid;
+	gap: 16px;
+}
+
+.about-panel,
 #experience,
 #coursework {
 	margin: 0;
-	padding: 16px 18px;
-	background: rgba(255, 255, 255, 0.45);
-	border-radius: 12px;
-	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+	padding: 18px 20px;
+	background: linear-gradient(155deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.48));
+	border-radius: 16px;
+	border: 1px solid rgba(255, 255, 255, 0.65);
+	box-shadow: 0 12px 28px rgba(83, 53, 105, 0.09);
+	backdrop-filter: blur(7px);
+}
+
+#about-me {
+	position: relative;
+	border-left: 6px solid rgba(162, 81, 120, 0.45);
 }
 
 h2 {
-	margin: 0 0 8px;
-	font-size: 24px;
+	margin: 0 0 10px;
+	font-size: 23px;
 	padding-bottom: 6px;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+	border-bottom: 1px solid rgba(73, 53, 96, 0.16);
+	color: #5a2f67;
 }
 
 #about-me p {
 	margin: 0;
-	line-height: 1.55;
-	font-size: 17px;
+	line-height: 1.65;
+	font-size: 16px;
+}
+
+#education ul,
+#skills-container ul {
+	margin: 0;
+	padding-left: 20px;
 }
 
 ul {
@@ -101,74 +121,93 @@ ul {
 }
 
 li {
-	margin: 6px 0;
-	font-size: 16px;
+	margin: 7px 0;
+	font-size: 15px;
+	line-height: 1.45;
+}
+
+.detail-columns {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 16px;
+	opacity: 0;
+	animation: fade-up 0.7s ease-out 0.36s forwards;
+	align-items: start;
+}
+
+#experience,
+#coursework {
+	max-height: 78vh;
+	overflow: auto;
+}
+
+#experience::-webkit-scrollbar,
+#coursework::-webkit-scrollbar {
+	width: 9px;
+}
+
+#experience::-webkit-scrollbar-thumb,
+#coursework::-webkit-scrollbar-thumb {
+	background: rgba(140, 89, 131, 0.38);
+	border-radius: 20px;
 }
 
 :is(.experience-item, .course-year) {
-	background: rgba(255, 255, 255, 0.55);
-	border-radius: 10px;
+	background: rgba(255, 255, 255, 0.64);
+	border-radius: 12px;
 	padding: 10px 12px;
 	margin-bottom: 10px;
-	border: 1px solid rgba(0, 0, 0, 0.08);
+	border: 1px solid rgba(88, 61, 122, 0.12);
+	transition: transform 0.16s ease, box-shadow 0.16s ease;
 	opacity: 0;
 	animation: fade-up 0.5s ease-out forwards;
 }
 
+:is(.experience-item, .course-year):hover {
+	transform: translateY(-2px);
+	box-shadow: 0 7px 18px rgba(95, 61, 117, 0.12);
+}
+
 #experience .experience-item:nth-of-type(1),
 #coursework .course-year:nth-of-type(1) {
-	animation-delay: 0.62s;
+	animation-delay: 0.48s;
 }
 
 #experience .experience-item:nth-of-type(2),
 #coursework .course-year:nth-of-type(2) {
-	animation-delay: 0.68s;
+	animation-delay: 0.54s;
 }
 
 #experience .experience-item:nth-of-type(3),
 #coursework .course-year:nth-of-type(3) {
-	animation-delay: 0.74s;
+	animation-delay: 0.6s;
 }
 
 #experience .experience-item:nth-of-type(4),
 #coursework .course-year:nth-of-type(4) {
-	animation-delay: 0.8s;
+	animation-delay: 0.66s;
 }
 
 #experience .experience-item:nth-of-type(5),
 #coursework .course-year:nth-of-type(5) {
-	animation-delay: 0.86s;
+	animation-delay: 0.72s;
 }
 
 #experience .experience-item:nth-of-type(6) {
-	animation-delay: 0.92s;
+	animation-delay: 0.78s;
 }
 
 #experience .experience-item:nth-of-type(7) {
-	animation-delay: 0.98s;
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.about-layout,
-	#header-label,
-	#header-text,
-	#education,
-	#about-me,
-	#skills-container,
-	.detail-columns,
-	:is(.experience-item, .course-year) {
-		animation: none;
-		opacity: 1;
-		transform: none;
-	}
+	animation-delay: 0.84s;
 }
 
 :is(.experience-item, .course-year) summary {
-	font-size: 17px;
+	font-size: 16px;
 	font-weight: 700;
 	cursor: pointer;
 	list-style: none;
 	line-height: 1.35;
+	color: #4d2f6a;
 }
 
 :is(.experience-item, .course-year) summary::-webkit-details-marker {
@@ -176,31 +215,35 @@ li {
 }
 
 :is(.experience-item, .course-year) summary::before {
-	content: "▸";
+	content: "+";
 	margin-right: 10px;
 	display: inline-block;
+	font-weight: 700;
+	color: #b14f7c;
 	transition: transform 0.15s ease;
 }
 
 :is(.experience-item, .course-year)[open] summary::before {
-	transform: rotate(90deg);
+	transform: rotate(45deg);
 }
 
 .experience-meta {
 	margin: 6px 0 8px;
 	font-size: 14px;
 	font-weight: 600;
+	color: #69496d;
 }
 
 .experience-skills {
 	margin: 6px 0 0;
 	font-size: 14px;
 	font-weight: 600;
+	color: #744f72;
 }
 
 .experience-item p {
-	font-size: 16px;
-	line-height: 1.45;
+	font-size: 15px;
+	line-height: 1.5;
 }
 
 .experience-item ul {
@@ -209,8 +252,9 @@ li {
 
 #coursework h4 {
 	margin: 8px 0 2px;
-	font-size: 16px;
-	font-weight: 600;
+	font-size: 15px;
+	font-weight: 700;
+	color: #5a3f7a;
 }
 
 #coursework ul {
@@ -221,44 +265,38 @@ li {
 	margin-top: 0;
 }
 
+@media (max-width: 980px) {
+	.about-top-grid,
+	.detail-columns {
+		grid-template-columns: 1fr;
+	}
+}
+
 @media (max-width: 768px) {
 	#header-text {
 		font-size: 32px;
 	}
 
 	.about-layout {
-		padding: 6px 0 16px;
+		padding: 6px 10px 90px;
 	}
 
-	.detail-columns {
-		grid-template-columns: 1fr;
-		gap: 14px;
-		max-width: 100%;
-		margin: 0 10px 14px;
+	.about-panel,
+	#experience,
+	#coursework {
+		padding: 15px;
 	}
 
 	#experience,
 	#coursework {
-		padding: 14px 14px;
-	}
-
-	#education,
-	#about-me,
-	#skills-container {
-		margin: 0 10px 14px;
-		padding: 16px;
-	}
-}
-
-@media (max-width: 980px) {
-	.detail-columns {
-		grid-template-columns: 1fr;
+		max-height: none;
+		overflow: visible;
 	}
 }
 
 @media (max-width: 430px) {
 	.about-layout {
-		padding: 4px 0 12px;
+		padding: 4px 8px 80px;
 	}
 
 	#header-label {
@@ -268,38 +306,22 @@ li {
 
 	#header-text {
 		font-size: 26px;
-		margin-bottom: 12px;
-	}
-
-	#education,
-	#about-me,
-	#skills-container,
-	#experience,
-	#coursework {
-		margin: 0 8px 10px;
-		padding: 12px;
-		border-radius: 10px;
+		margin-bottom: 10px;
 	}
 
 	h2 {
 		font-size: 20px;
-		padding-bottom: 4px;
 	}
 
 	#about-me p,
 	.experience-item p,
 	li {
 		font-size: 14px;
-		line-height: 1.4;
-	}
-
-	.detail-columns {
-		margin: 0 8px 10px;
-		gap: 10px;
+		line-height: 1.42;
 	}
 
 	:is(.experience-item, .course-year) {
-		padding: 8px 10px;
+		padding: 9px 10px;
 		margin-bottom: 8px;
 	}
 
@@ -311,6 +333,21 @@ li {
 	.experience-skills,
 	#coursework h4 {
 		font-size: 13px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.about-layout,
+	.about-top-grid,
+	.detail-columns,
+	:is(.experience-item, .course-year) {
+		animation: none;
+		opacity: 1;
+		transform: none;
+	}
+
+	:is(.experience-item, .course-year) {
+		transition: none;
 	}
 }
 
