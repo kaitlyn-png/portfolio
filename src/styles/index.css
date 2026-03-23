@@ -65,6 +65,8 @@
     padding: 24px;
     font-size: 24px;
     border-radius: 10px;
+    border:rgba(252, 252, 252, 0.6) solid 1px;
+    box-shadow: 0 14px 30px rgba(110, 58, 92, 0.08);
 }
 #about-container{
     display: flex;
@@ -107,7 +109,7 @@
 .technologies-logo:nth-of-type(6) { animation-delay: 0.9s; }
 .technologies-logo:nth-of-type(7) { animation-delay: 0.97s; }
 
-#figma-logo:hover, #github-logo:hover, #html-logo:hover, #javascript-logo:hover, #python-logo:hover, #react-logo:hover, #typescript-logo:hover{
+.technologies-logo:hover{
     transform: scale(1.2);
     transition: transform 0.3s ease-in-out;
 }

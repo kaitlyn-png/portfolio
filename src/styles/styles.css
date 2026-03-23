@@ -1,23 +1,119 @@
-body{
-    background-image: linear-gradient(to bottom, #f6d5f7, #fbe9d7);
+:root {
+    --bg-start: #f6d5f7;
+    --bg-end: #fbe9d7;
+    --body-text: #3e2647;
+    --header-label: #a25178;
+    --header-text: #5a2f67;
+    --footer-text: #5a2f67;
+}
+
+body {
+    background-image: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0;
-    padding: 0;    
+    padding: 0;
     font-family: Tahoma, Verdana, sans-serif;
     display: block;
     width: 100%;
     height: 100%;
+    color: var(--body-text);
 }
 
-#footer{
+body.theme-light {
+    --bg-start: #f6d5f7;
+    --bg-end: #fbe9d7;
+    --body-text: #3e2647;
+    --header-label: #a25178;
+    --header-text: #5a2f67;
+    --footer-text: #5a2f67;
+}
+
+body.theme-dark {
+    --bg-start: #252130;
+    --bg-end: #111217;
+    --body-text: #f3ecf7;
+    --header-label: #efc3de;
+    --header-text: #f6e6f2;
+    --footer-text: #ead7f4;
+}
+
+@media (prefers-color-scheme: dark) {
+    body:not(.theme-light):not(.theme-dark) {
+        --bg-start: #252130;
+        --bg-end: #111217;
+        --body-text: #f3ecf7;
+        --header-label: #efc3de;
+        --header-text: #f6e6f2;
+        --footer-text: #ead7f4;
+    }
+}
+
+#footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 20px;
+    padding: 20px 84px 20px 20px;
     font-size: 18px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#footer-text {
+    text-align: center;
+    color: var(--footer-text);
+}
+
+#footer > div {
+    color: var(--footer-text);
+}
+
+#socials {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+#socials a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.socials-logo {
+    width: 24px;
+    height: 24px;
+    margin-left: 12px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.socials-logo:hover {
+    transform: translateY(-1px) scale(1.08);
+    transition: transform 0.18s ease;
+}
+
+@media (max-width: 430px) {
+    #footer {
+        padding: 16px 64px 16px 14px;
+        font-size: 15px;
+    }
+
+    #socials {
+        left: 10px;
+    }
+
+    .socials-logo {
+        width: 20px;
+        height: 20px;
+        margin-left: 8px;
+        border-radius: 5px;
+    }
 }
 
 @keyframes fade-up {
@@ -53,7 +149,7 @@ body{
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #a25178;
+    color: var(--header-label);
     animation: fade-up 0.6s ease-out 0.12s forwards;
 }
 
@@ -64,7 +160,7 @@ body{
     margin: 0 auto;
     font-size: 48px;
     line-height: 1.05;
-    color: #5a2f67;
+    color: var(--header-text);
     font-weight: 700;
     margin-bottom: 24px;
     animation: fade-up 0.7s ease-out 0.22s both;
@@ -77,4 +173,84 @@ body{
         opacity: 1;
         transform: none;
     }
+}
+
+body.theme-dark #navigation {
+    background: rgba(26, 29, 37, 0.72);
+    border-color: rgba(230, 206, 230, 0.18);
+    box-shadow: 0 12px 26px rgba(5, 8, 14, 0.45);
+    color: #ead7f4;
+}
+
+body.theme-dark #navigation a {
+    color: #efaef1;
+}
+
+body.theme-dark #navigation a:hover {
+    color: #ffffff;
+}
+
+body.theme-dark #current-page {
+    color: #ffffff;
+}
+
+body.theme-dark #info-container,
+body.theme-dark .about-panel,
+body.theme-dark #experience,
+body.theme-dark #coursework,
+body.theme-dark .contact-card,
+body.theme-dark .project-card,
+body.theme-dark .reach-card,
+body.theme-dark .reach-card .contact-list li,
+body.theme-dark :is(.experience-item, .course-year) {
+    background: rgba(24, 28, 38, 0.72);
+    border-color: rgba(226, 197, 225, 0.16);
+    color: #f3ecf7;
+    box-shadow: 0 14px 30px rgba(5, 8, 14, 0.32);
+}
+
+body.theme-dark .tag {
+    background: rgba(241, 186, 223, 0.16);
+    color: #ffd2ea;
+}
+
+body.theme-dark .project-title,
+body.theme-dark #projects-footer,
+body.theme-dark h2,
+body.theme-dark h4,
+body.theme-dark .experience-meta,
+body.theme-dark .experience-skills,
+body.theme-dark .contact-label,
+body.theme-dark :is(.experience-item, .course-year) summary {
+    color: #ffd2ea;
+}
+
+body.theme-dark .project-description,
+body.theme-dark .contact-card a,
+body.theme-dark .project-links a {
+    color: #f3ecf7;
+}
+
+body.theme-dark,
+body.theme-dark #about-me p,
+body.theme-dark .experience-item p,
+body.theme-dark li,
+body.theme-dark .contact-card p,
+body.theme-dark .contact-card li,
+body.theme-dark #resume-content p {
+    color: #f6effa;
+}
+
+body.theme-dark .project-links a:hover {
+    color: #1a1420;
+    background: #ffd2ea;
+}
+
+body.theme-dark #resume-content object {
+    border-color: rgba(233, 211, 235, 0.5);
+}
+
+body.theme-dark #name,
+body.theme-dark #github-logo {
+    filter: invert(100%);
 }
