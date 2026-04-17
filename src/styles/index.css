@@ -68,13 +68,19 @@
     border:rgba(252, 252, 252, 0.6) solid 1px;
     box-shadow: 0 14px 30px rgba(110, 58, 92, 0.08);
 }
+
+#info-container:hover{
+    box-shadow: 0 14px 30px rgba(110, 58, 92, 0.16);
+    cursor: pointer;
+}
+
 #about-container{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-#about-container img{
+#profilepic{
     width: 160px;
     height: 160px;
     margin-left: 24px;
@@ -108,11 +114,6 @@
 .technologies-logo:nth-of-type(5) { animation-delay: 0.83s; }
 .technologies-logo:nth-of-type(6) { animation-delay: 0.9s; }
 .technologies-logo:nth-of-type(7) { animation-delay: 0.97s; }
-
-.technologies-logo:hover{
-    transform: scale(1.2);
-    transition: transform 0.3s ease-in-out;
-}
 
 @media (max-width: 430px) {
     body{
