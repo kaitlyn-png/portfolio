@@ -121,18 +121,23 @@
         margin: 0;
         padding: 0;
     }
+
     #header-container{
         margin: 0;
     }
+
     #header-label, #header-text{
         font-size: 18px;
     }
+
     #name{
         width: 320px;
         height: auto;
     }
+
     #about-container{
         flex-direction: column;
+        justify-content: center;
     }
 
     #about-container img{
@@ -140,12 +145,22 @@
         height: 360px;
         border-radius: 50%;
     }
+
+    #profilepic{
+        width: 360px;
+        height: 360px;
+        margin: 24px 0 0 0;
+        border-radius: 50%;
+    }
+
     #info-container{
         background-color: transparent;
         width: 430px;
         display: flex;
         flex-direction: column;
         margin: 0;
+        box-shadow: none;
+        border: none;
     }
 
     .about-text{
@@ -157,6 +172,7 @@
         width: 430px;
         gap: 0px;
     }
+
     .technologies-logo{
         width: 40px;
         height: 40px;

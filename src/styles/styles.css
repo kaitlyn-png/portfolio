@@ -100,18 +100,25 @@ body.theme-dark {
 }
 
 @media (max-width: 430px) {
+    body {
+        width: 430px;
+        height: 932px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
     #footer {
         padding: 16px 64px 16px 14px;
         font-size: 15px;
     }
 
     #socials {
-        left: 10px;
+        justify-content: center;
     }
 
     .socials-logo {
-        width: 20px;
-        height: 20px;
+        width: 32px;
+        height: 32px;
         margin-left: 8px;
         border-radius: 5px;
     }
